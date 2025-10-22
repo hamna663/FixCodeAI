@@ -82,7 +82,7 @@ function App() {
               );
             }}
             padding={10}
-            className="bg-[#323741] text-[#e0e0e0] rounded p-4 min-h-[50vh] max-h-[90vh]"
+            className="bg-[#323741] text-[#e0e0e0] rounded p-4 h-[70vh]"
           />
           <div className="flex mx-5 my-2 justify-between">
             <select
@@ -113,13 +113,13 @@ function App() {
             </button>
           </div>
         </div>
-        <div className="sm:w-[45%] w-full my-2 overflow-auto">
+        <div className="sm:w-[45%] w-full">
           <h2 className="text-4xl font-bold text-center text-[#242432]">
             Review
           </h2>
-          <div className="bg-[#323741] text-[#e0e0e0] rounded p-4 min-h-[50vh] max-h-[90vh] flex items-center justify-center">
+          <div className="bg-[#323741] text-[#e0e0e0] rounded p-4  h-[70vh] overflow-auto mt-1">
             {loading ? (
-              <div className="flex flex-col items-center justify-center w-full h-full">
+              <div className="flex flex-col items-center justify-center w-full mt-5">
                 <svg
                   className="animate-spin h-8 w-8 text-[#29b6f6] mb-2"
                   xmlns="http://www.w3.org/2000/svg"
@@ -210,9 +210,10 @@ function App() {
                     <code
                       style={{
                         background: "#1e1e1e",
-                        color: "#ff9800",
+                        color: "#19ffff",
                         borderRadius: 6,
                         padding: "2px 6px",
+                        textShadow: "none",
                         fontSize: "1em",
                         overflow: "scroll",
                       }}

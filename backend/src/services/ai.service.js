@@ -4,20 +4,22 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const ai = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY,
+  apiKey: process.env.GEMINI_API_KEY,
 });
 
 async function aiService(prompt) {
-    if (!prompt) {
-        throw new Error("Prompt cannot be empty.");
-    }
+  if (!prompt) {
+    throw new Error("Prompt cannot be empty.");
+  }
 
-    const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: [
-            {
-                role: "user", parts: [{
-                    text: `INSTRUCTIONS: You are FixCodeAI, a professional code reviewer and programming assistant.
+  const response = await ai.models.generateContent({
+    model: "gemini-2.5-flash",
+    contents: [
+      {
+        role: "user",
+        parts: [
+          {
+            text: `INSTRUCTIONS: You are FixCodeAI, a professional code reviewer and programming assistant.
                         When the user provides code, follow these steps:
 
                         1. Review Requirements
@@ -58,14 +60,16 @@ async function aiService(prompt) {
 
                         Do not assume external context unless explicitly provided.
 
-                        Follow best practices for the specific programming language.` }]
-            },
-            { role: "user", parts: [{ text: prompt }] }
-        ]
-    });
+                        Follow best practices for the specific programming language.`,
+          },
+        ],
+      },
+      { role: "user", parts: [{ text: prompt }] },
+    ],
+  });
 
-    // Adjust response extraction based on actual API response structure
-    return response.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+  // Adjust response extraction based on actual API response structure
+  return response.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
 }
 
 export default aiService;

@@ -12,7 +12,7 @@ const Footer = () => {
       <div>
         <a
           className="rounded-full px-2 py-1 gap-1 flex text-lg items-center bg-white text-[#323741] border-1 hover:border-white cursor-pointer"
-          href="https://github.com/hamna663/FixCodeAI.git"
+          href="https://github.com/hamna663/FixCodeAI"
           target="_blank"
         >
           <img src="./github.svg" className="w-7" alt="github-icon" />
