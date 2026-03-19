@@ -38,6 +38,8 @@ function getDefaultCode(lang) {
   }
 }
 
+const backend= import.meta.env.VITE_BACKEND_URL
+
 function App() {
   const [lang, setLang] = useState("javascript");
   const [code, setCode] = useState(getDefaultCode("javascript"));
@@ -46,7 +48,7 @@ function App() {
   const getReview = async () => {
     setLoading(true);
     try {
-      const r = await axios.post("http://localhost:3000/get-review", { code });
+      const r = await axios.post(`${backend}/get-review`, { code });
       setReview(r.data);
     } catch {
       setReview("Failed to get Review, Please try again in a few minutes.");

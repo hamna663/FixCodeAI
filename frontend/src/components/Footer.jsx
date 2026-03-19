@@ -11,7 +11,7 @@ const Footer = () => {
       </div>
       <div>
         <a
-          className="rounded-full px-2 py-1 gap-1 flex text-lg items-center bg-white text-[#323741] border-1 hover:border-white cursor-pointer"
+          className="rounded-full px-2 py-1 gap-1 flex text-lg items-center bg-white text-[#323741] border hover:border-white cursor-pointer"
           href="https://github.com/hamna663/FixCodeAI"
           target="_blank"
         >
