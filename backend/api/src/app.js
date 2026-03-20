@@ -13,6 +13,6 @@ app.use(cors({
 app.get("/", (req, res) => {
   res.send("<h1>Hello World</h1>");
 });
-app.post("/api/get-review", aiRoutes);
+app.post("/get-review", aiRoutes);
 
 export default app;
