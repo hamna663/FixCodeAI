@@ -48,7 +48,7 @@ function App() {
   const getReview = async () => {
     setLoading(true);
     try {
-      const r = await axios.post(`${backend}/get-review`, { code });
+      const r = await axios.post(`${backend}/api/get-review`, { code });
       console.log(r.data);
       setReview(r.data);
     } catch (error) {
