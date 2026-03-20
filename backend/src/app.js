@@ -1,15 +1,19 @@
-import express from 'express'
-import aiRoutes from './routes/ai.route.js'
-import cors from 'cors'
+import express from "express";
+import aiRoutes from "./routes/ai.route.js";
+import cors from "cors";
 
-const app = express()
-app.use(express.json())
-app.use(cors())
+const app = express();
+app.use(express.json());
+app.use(
+  cors({
+    origin: "https://fixcodeai.vercel.app/",
+    credentials: true,
+  }),
+);
 
-app.get('/', (req, res) => {
-    res.send("<h1>Hello World</h1>")
-})
-app.post('/get-review', aiRoutes)
+app.get("/", (req, res) => {
+  res.send("<h1>Hello World</h1>");
+});
+app.post("/get-review", aiRoutes);
 
-
-export default app
+export default app;
