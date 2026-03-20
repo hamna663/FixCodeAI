@@ -5,11 +5,10 @@ import cors from "cors";
 const app = express();
 app.use(express.json());
 
-app.options("*", cors({
-    origin: "https://fixcodeai.vercel.app",
-    credentials: true,
-  }
-));
+app.use(cors({
+  origin: "https://fixcodeai.vercel.app",
+  methods: ["POST"]
+}));
 
 app.get("/", (req, res) => {
   res.send("<h1>Hello World</h1>");
