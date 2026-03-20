@@ -49,8 +49,10 @@ function App() {
     setLoading(true);
     try {
       const r = await axios.post(`${backend}/get-review`, { code });
+      console.log(r.data);
       setReview(r.data);
-    } catch {
+    } catch (error) {
+      console.log(error);
       setReview("Failed to get Review, Please try again in a few minutes.");
     }
     setLoading(false);

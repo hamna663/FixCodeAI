@@ -4,12 +4,12 @@ import cors from "cors";
 
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
+
+app.options("*", cors({
     origin: "https://fixcodeai.vercel.app",
     credentials: true,
-  }),
-);
+  }
+));
 
 app.get("/", (req, res) => {
   res.send("<h1>Hello World</h1>");
